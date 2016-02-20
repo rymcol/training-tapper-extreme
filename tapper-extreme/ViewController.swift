@@ -20,19 +20,24 @@ class ViewController: UIViewController {
     //Game Screen
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var tapsLabel: UILabel!
+    @IBOutlet weak var endButton: UIButton!
     
     //Game Functions
     @IBAction func playPressed(Sender: UIButton!) {
         
-        showGameScreen()
+        let tapFieldTextInt = Int(tapField.text!)
         
-        if tapField.text != nil {
-            let winAt: Int = Int(tapField.text!)!
-            newGame = tapGame(howManyWin: winAt)
-            updateTapsLabel("\(newGame!.currentTaps) Taps")
-            
+        if tapField.text != "" {
+            if tapFieldTextInt == nil || tapFieldTextInt == 0 || tapFieldTextInt < 0 {
+                presentInputError()
+            } else {
+                showGameScreen()
+                let winAt: Int = Int(tapField.text!)!
+                newGame = tapGame(howManyWin: winAt)
+                updateTapsLabel("\(newGame!.currentTaps) Taps")
+            }
         } else {
-            tapField.text = "Error"
+            presentInputError()
         }
         
     }
@@ -42,14 +47,10 @@ class ViewController: UIViewController {
         if newGame != nil {
             
             newGame!.advanceTaps()
-            
             updateTapsLabel("\(newGame!.currentTaps) Taps")
             
-            print("Taps: \(newGame!.currentTaps)")
-            print("Win at: \(newGame!.tapsToWin!)")
-            print("\(newGame!.checkWin())")
-            
             if newGame!.checkWin() == true {
+                presentWinNotice()
                 returnToHomeScreen()
             } else {
                 return
@@ -61,6 +62,22 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func endGamePressed (Sender: UIButton!) {
+        returnToHomeScreen()
+    }
+    
+    func presentInputError () {
+        let alert = UIAlertController(title: "Alert", message: "You must put a number greater than 0 in the box", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func presentWinNotice() {
+        let alert = UIAlertController(title: "Alert", message: "You won!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func returnToHomeScreen () {
         updateTapsLabel("0 Taps")
         
@@ -70,6 +87,7 @@ class ViewController: UIViewController {
         
         tapButton.hidden = true
         tapsLabel.hidden = true
+        endButton.hidden = true
     }
     
     func showGameScreen () {
@@ -80,6 +98,7 @@ class ViewController: UIViewController {
         
         tapButton.hidden = false
         tapsLabel.hidden = false
+        endButton.hidden = false
     }
     
     func updateTapsLabel (text: String) {
