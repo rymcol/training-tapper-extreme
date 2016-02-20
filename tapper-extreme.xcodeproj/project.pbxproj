@@ -12,6 +12,7 @@
 		944C92711C78B071003FE2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944C926F1C78B071003FE2E0 /* Main.storyboard */; };
 		944C92731C78B071003FE2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944C92721C78B071003FE2E0 /* Assets.xcassets */; };
 		944C92761C78B071003FE2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944C92741C78B071003FE2E0 /* LaunchScreen.storyboard */; };
+		944C927E1C78C43C003FE2E0 /* TapGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C927D1C78C43C003FE2E0 /* TapGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		944C92721C78B071003FE2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944C92751C78B071003FE2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		944C92771C78B071003FE2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		944C927D1C78C43C003FE2E0 /* TapGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				944C926B1C78B071003FE2E0 /* AppDelegate.swift */,
 				944C926D1C78B071003FE2E0 /* ViewController.swift */,
+				944C927D1C78C43C003FE2E0 /* TapGame.swift */,
 				944C926F1C78B071003FE2E0 /* Main.storyboard */,
 				944C92721C78B071003FE2E0 /* Assets.xcassets */,
 				944C92741C78B071003FE2E0 /* LaunchScreen.storyboard */,
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					944C92671C78B071003FE2E0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8VF4S3W85G;
 					};
 				};
 			};
@@ -137,6 +141,7 @@
 			files = (
 				944C926E1C78B071003FE2E0 /* ViewController.swift in Sources */,
 				944C926C1C78B071003FE2E0 /* AppDelegate.swift in Sources */,
+				944C927E1C78C43C003FE2E0 /* TapGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "tapper-extreme/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanmcollins.tapper-extreme";
@@ -260,6 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "tapper-extreme/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanmcollins.tapper-extreme";
